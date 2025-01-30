@@ -4,7 +4,7 @@ import './boton.css'
 const Boton = (props) => {
   return (
     <>
-        <h1 className='boton'>{props.texto}</h1>
+        <button className='boton'>{props.texto}</button>
     </>
   )
 }

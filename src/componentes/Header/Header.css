@@ -1,9 +1,18 @@
-h1{
-    display: inline;
+.titulo-header{
+    display: flex;
+    position: fixed;
+    left: 2%;
 }
 
-img{
+.img-header{
     width: 5%;
     position: fixed;
     right: 2%;
+}
+.header{
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
