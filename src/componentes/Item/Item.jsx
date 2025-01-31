@@ -6,7 +6,9 @@ const Item = ({id, nombre, precio, img}) => {
   return (
 
     <div className='item-box'>
-        <img src={img} alt={nombre} className='item-img'/>
+        <div className='item-box-img'>
+          <img src={img} alt={nombre} className='item-img'/>
+        </div>
         <h3 className='item-title'>{nombre}</h3>
         <p className='item-txt'>Precio: {precio}</p>
         <p className='item-txt'>{id}</p>

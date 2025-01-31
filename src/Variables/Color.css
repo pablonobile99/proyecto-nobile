@@ -1,0 +1,23 @@
+:root{
+
+    /* Colores */
+    --primario: #E1E6E6;
+    --secundario: #2F4155;
+    --fondo: #F5EFEB;
+
+
+
+    /* Generales */
+    --txtColor: var(--secundario);
+
+    /* Header */
+    --fondoHeader: var(--fondo);
+    --BotonMenuColor: var(--fondo);
+    --BotonMenuColorHobber: #f8eae0;
+
+
+    /* Body */
+    --fondoItemConteiner: var(--fondo);
+    --ItemBoxColor: var(--primario)
+
+}

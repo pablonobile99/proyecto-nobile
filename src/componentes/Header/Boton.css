@@ -3,4 +3,12 @@
     margin: 1%;
     font-size: medium;
     display: flex;
+    background-color: var(--BotonMenuColor);
+    border: 0;
+    border-radius: 10px;
+}
+
+.boton:hover{
+    background-color: var(--BotonMenuColorHobber);
+    transition: all 50ms ease-out;
 }

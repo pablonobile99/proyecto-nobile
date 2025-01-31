@@ -16,9 +16,11 @@ const ItemListConteinter = (props) => {
 
 
   return (
-    <div>
-    <h2>Gatitos:</h2>
-    <ItemList productos={productos}/>
+    <div className='item-body'>
+      <h2>Gatitos:</h2>
+      <div className='item-list-conteiner-box'>
+        <ItemList productos={productos}/>
+      </div>
     </div>
   )
 }

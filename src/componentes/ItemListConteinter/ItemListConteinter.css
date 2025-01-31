@@ -1,0 +1,9 @@
+.item-list-conteiner-box{
+    display: flex;
+    justify-content: center;
+}
+
+.item-body{
+    padding: 2vh;
+    background-color: var(--fondoItemConteiner);
+}
