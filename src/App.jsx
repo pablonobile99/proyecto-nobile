@@ -7,8 +7,8 @@ import './App.css'
 import Header from './componentes/Header/Header'
 import Boton from './componentes/Header/Boton'
 import ItemListConteinter from './componentes/ItemListConteinter/ItemListConteinter'
-import Promesa from './componentes/Promesa/Promesa'
-
+import JsonPlaceHolder from './componentes/JsonPlaceHolder/JsonPlaceHolder'
+import Form from './componentes/Form/Form'
 
 const App = () => {
   return (
@@ -16,6 +16,8 @@ const App = () => {
       <Variables/>
       <Header titulo="Adopta.me"/>
       <ItemListConteinter/>
+      {/* <JsonPlaceHolder/> */}
+      {/* <Form/> */}
     </div>
   )
 }
