@@ -1,34 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import './ItemListConteinter.css'
 import ItemList from '../ItemList/ItemList'
-import { getProductos } from '../../asyncmock'
+import { getProductos, getProductosCategoria } from '../../asyncmock'
+import { useParams } from 'react-router-dom'
 
 
 const ItemListConteinter = (props) => {
 
   const [productos, setProductos] = useState([])
 
+  const {idCategoria} = useParams();
+
+  useEffect(() => {
+
+    const inventario = idCategoria? getProductosCategoria : getProductos;
+
+    inventario(idCategoria)
+    .then(res => setProductos(res))
+
+  }, [idCategoria])
+
+/* 
   const pedirDatos = async () => {
-    const inventario = await getProductos()
+    const inventario = idCategoria? await getProductosCategoria() : await getProductos();
     setProductos(inventario)
   }
   
   pedirDatos();
 
-  const [busqueda,setBusqueda] = useState ("")
+  const [busqueda,setBusqueda] = useState ("") */
 
-  /* useEffect(()=>{
-    productos.filter(c => c.id === 1).map(p =>{
-      return(<ItemList productos={p}/>)
-    })
-  },[busqueda]) */
-
-  /* const manejadorSubmit = (event) =>{
-    event.preventDefault()
-    console.log(event.target.busqueda.value)
-    setBusqueda(event.target.busqueda.value)
-    event.target.busqueda.value = ""
-  } */
 
   return (
     <div className='item-body'>

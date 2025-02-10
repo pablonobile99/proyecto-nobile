@@ -4,22 +4,32 @@ import Variables from './componentes/Variables/Variables'
 
 import './App.css'
 
+
+
 import Header from './componentes/Header/Header'
 import Boton from './componentes/Header/Boton'
 import ItemListConteinter from './componentes/ItemListConteinter/ItemListConteinter'
 import JsonPlaceHolder from './componentes/JsonPlaceHolder/JsonPlaceHolder'
 import Form from './componentes/Form/Form'
 
+import { BrowserRouter , Routes , Route } from 'react-router-dom'
+
 const App = () => {
   return (
-    <div className='app-General'>
+    <BrowserRouter>
+      <div className='app-General'>
       <Variables/>
       <Header titulo="Adopta.me"/>
-      <ItemListConteinter/>
-      {/* <JsonPlaceHolder/> */}
-      {/* <Form/> */}
+      <Routes>
+        <Route path='/' element = {<ItemListConteinter/>}/>
+        <Route path='/categoria/:idCategoria' element = {<ItemListConteinter/>}/>
+      </Routes>
     </div>
+    </BrowserRouter>
+
   )
 }
 
 export default App
+
+
