@@ -8,7 +8,9 @@ const Header = (props) => {
     <div className='header'>
         
         <h1 className='titulo-header'><Link to={'/'}>{props.titulo}</Link></h1>
-
+        <Link to={'/'}>
+          <Boton texto="Inicio"/>
+        </Link>
         <Link to={'/categoria/gato'}>
           <Boton texto="Gatitos"/>
         </Link>
