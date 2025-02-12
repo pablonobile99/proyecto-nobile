@@ -83,6 +83,8 @@
     grid-area: precio;
     margin: 0;
     padding: 1%;
+    font-size: 105%;
+    font-weight: 600;
 
 }
 
