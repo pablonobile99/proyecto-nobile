@@ -10,6 +10,7 @@
 
     /* Generales */
     --txtColor: var(--secundario);
+    --link: var(--secundario);
 
     /* Header */
     --fondoHeader: var(--fondo);
@@ -19,6 +20,9 @@
 
     /* Body */
     --fondoItemConteiner: var(--fondo);
-    --ItemBoxColor: var(--primario)
+    --ItemBoxColor: var(--primario);
+
+    /* Detaill */
+    --ItemDetailColor: var(--primario);
 
 }

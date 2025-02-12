@@ -13,9 +13,11 @@ const Item = ({id, nombre, precio, img, idCat}) => {
         <h3 className='item-title'>{nombre}</h3>
         <p>{idCat}</p>
         <p className='item-txt'>Precio: {precio}</p>
-        <p className='item-txt'>{id}</p>
+        <p className='item-txt'></p>
         <button className='item-button'>
-          <Link to={`/item/${id}`}>Ver Detalles</Link>
+          <Link to={`/item/${id}`} className='link'>
+          <span className='item-txt-bot'>Ver Detalles</span>
+          </Link>
         </button>
     </div>
   )

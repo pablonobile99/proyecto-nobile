@@ -33,13 +33,16 @@ const ItemDetail = () => {
         <div className='item-detail-box-img'>
             <img src={producto.img} alt={''} className='item-detail-img'/>
         </div>
+        <div className='item-detail-sep'/>
+        <p className='item-detail-info1'>{producto.idCat}</p>
+        <p className='item-detail-precio'>Precio: {producto.precio}</p>
+        <p className='item-detail-info2'>{producto.id}</p>
+        <div className='conteiner-button'>
+          <button className='item-detail-button'>
+            <Link to={`/`} className='link' >Inicio</Link>
+          </button>
+        </div>
 
-        <p>{producto.idCat}</p>
-        <p className='item-detail-txt'>Precio: {producto.precio}</p>
-        <p className='item-detail-txt'>{producto.id}</p>
-        <button className='item-detail-button'>
-          <Link to={`/`}>Inicio</Link>
-        </button>
     </div>
   )
 }
