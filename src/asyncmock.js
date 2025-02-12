@@ -14,9 +14,9 @@ const productos = [
     {id:13, nombre: "Comida gatos bebe x Kg", precio: "4.600$", img: "../public/Images/bebe.jpg", idCat: "salud", detail: "comida para gatos bebes bonitos"},
     {id:14, nombre: "Piedras de arenero Bolsa 2Kg", precio: "7.000$", img: "../public/Images/piedras.png", idCat: "salud", detail: "piedras para gatos bonitos"},
     {id:15, nombre: "Veterinario El Salvador", precio: "-", img: "../public/Images/v1.jpg", idCat: "veterinaria", detail: "veterinaria bonita a la calle"},
-    {id:16, nombre: "Particular PetPet", precio: "-", img: "../public/Images/v2.jpg", idCat: "veterinaria" detail: "veterinaria bonita a la calle"},
-    {id:17, nombre: "Veterinario particular", precio: "-", img: "../public/Images/v3.jpg", idCat: "veterinaria" detail: "veterinaria bonita a la calle"},
-    {id:18, nombre: "Veterinaria Mascotitas", precio: "-", img: "../public/Images/v4.jpg", idCat: "veterinaria" detail: "veterinaria bonita a la calle"}
+    {id:16, nombre: "Particular PetPet", precio: "-", img: "../public/Images/v2.jpg", idCat: "veterinaria", detail: "veterinaria bonita a la calle"},
+    {id:17, nombre: "Veterinario particular", precio: "-", img: "../public/Images/v3.jpg", idCat: "veterinaria", detail: "veterinaria bonita a la calle"},
+    {id:18, nombre: "Veterinaria Mascotitas", precio: "-", img: "../public/Images/v4.jpg", idCat: "veterinaria", detail: "veterinaria bonita a la calle"}
 
 
 ]
