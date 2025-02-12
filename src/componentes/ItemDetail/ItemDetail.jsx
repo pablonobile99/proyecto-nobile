@@ -36,7 +36,7 @@ const ItemDetail = () => {
         <div className='item-detail-sep'/>
         <p className='item-detail-info1'>{producto.idCat}</p>
         <p className='item-detail-precio'>Precio: {producto.precio}</p>
-        <p className='item-detail-info2'>{producto.id}</p>
+        <p className='item-detail-info2'>{producto.detail}</p>
         <div className='conteiner-button'>
           <button className='item-detail-button'>
             <Link to={`/`} className='link' >Inicio</Link>
