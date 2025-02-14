@@ -23,7 +23,15 @@ const Header = (props) => {
         <Link to={'/categoria/veterinaria'} className='link' >
           <Boton texto="Veterinaria"/>
         </Link>
-        <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="" className='img-header'/>
+        <Link to={'/carrito'} className='link'>
+          <div className='img-header-box'>
+            {/* <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="" className='img-header'/> */}
+            <img src="../../public/Images/carrito.png" alt="" className='img-header'/>
+          
+          </div>
+          </Link>
+        
+        
     </div>
   )
 }

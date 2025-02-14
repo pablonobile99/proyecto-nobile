@@ -12,7 +12,7 @@ const Boton = (props) => {
 
   const BotonMenu = () => {
     rePestaña(()=>{
-      document.title = props.texto
+      document.title = `AM ${props.texto}`
     })
   }
 
