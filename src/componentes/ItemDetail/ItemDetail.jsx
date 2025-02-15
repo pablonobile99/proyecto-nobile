@@ -35,8 +35,13 @@ const ItemDetail = () => {
         </div>
         <div className='item-detail-sep'/>
         <p className='item-detail-info1'>{producto.idCat}</p>
-        <p className='item-detail-precio'>Precio: {producto.precio}</p>
+        <p className='item-detail-precio'>{producto.precio}</p>
         <p className='item-detail-info2'>{producto.detail}</p>
+        <div className='item-detail-datos'>
+          <p>{producto.zona}</p>
+          <p>{producto.tel}</p>
+        </div>
+
         <div className='conteiner-button'>
           <button className='item-detail-button'>
             <Link to={`/`} className='link' >Inicio</Link>

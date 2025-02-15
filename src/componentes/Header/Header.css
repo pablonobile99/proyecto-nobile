@@ -1,8 +1,30 @@
+.header{
+    height: 8vh;
+    background-color:var(--fondoHeader);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+    position: sticky;
+    top: 0%;
+    border-bottom: 1px solid var(--secundario);
+}
 .titulo-header{
+    margin-left: 2%;
+}
+
+.titulo-header-link{
     display: flex;
     position: fixed;
     left: 2%;
+    height: 6vh;
+    align-items: center;
 }
+
+.logo-header{
+    height: 6vh;
+}
+
 
 .img-header{
     width: 4.5vh;
@@ -39,14 +61,3 @@
 
 }
 
-.header{
-    height: 8vh;
-    background-color:var(--fondoHeader);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0%;
-    position: sticky;
-    top: 0%;
-    border-bottom: 1px solid var(--secundario);
-}

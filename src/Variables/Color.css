@@ -24,5 +24,6 @@
 
     /* Detaill */
     --ItemDetailColor: var(--primario);
+    --DatosDetail: var(--fondo);
 
 }

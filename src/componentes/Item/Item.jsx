@@ -2,7 +2,7 @@ import React from 'react'
 import './Item.css'
 import { Link } from 'react-router-dom'
 
-const Item = ({id, nombre, precio, img, idCat, detail}) => {
+const Item = ({id, nombre, precio, img, idCat, zona, tel, detail}) => {
 
   return (
 
@@ -11,14 +11,16 @@ const Item = ({id, nombre, precio, img, idCat, detail}) => {
           <img src={img} alt={nombre} className='item-img'/>
         </div>
         <h3 className='item-title'>{nombre}</h3>
-        <p>{idCat}</p>
-        <p className='item-txt'>Precio: {precio}</p>
+        <p className='item-txt'>{idCat}</p>
+        <div className='item-zona'>
+          <img src="../..//public/images/gpsIcon.png" alt="gps" className='item-gps-icon'/>
+          <p className='item-txt'>{zona}</p>
+        </div>
+        <p className='item-txt'> {precio}</p>
         <p className='item-txt'></p>
-        <button className='item-button'>
-          <Link to={`/item/${id}`} className='link'>
+        <Link to={`/item/${id}`} className='link item-button'>
           <span className='item-txt-bot'>Ver Detalles</span>
-          </Link>
-        </button>
+        </Link>
     </div>
   )
 }

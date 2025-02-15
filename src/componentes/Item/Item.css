@@ -40,18 +40,30 @@
 }
 
 .item-txt{
-    margin: 2% 0;
-    font-size: 105%;
+    margin-bottom: 1%;
+    font-size: 100%;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+
 }
 
 h3{
-    height: 5vh;
-    /* margin: 10% 0; */
+    height: 2vh;
+    margin: 3% 0;
     display: flex;
     align-items: center;
 }
 
 .item-txt-bot{
     font-family: "Quicksand", serif;
+}
+.item-zona{
+    height: 2vh;
+    display: flex;
+    margin: 5% 0;
+}
+.item-gps-icon{
+    height: 100%;
+    margin-right: 5%;
 }

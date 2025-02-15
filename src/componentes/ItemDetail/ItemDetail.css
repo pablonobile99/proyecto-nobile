@@ -2,16 +2,17 @@
 
     width: 80vw;
     margin: 10vh 10vw;
+    padding: 1vh;
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 12vh 8vh 30vh auto auto 10vh;
+    grid-template-rows: 6vh 4vh 4vh 30vh auto 10vh;
     grid-template-areas:
     'foto nombre'
     'foto info1'
     'foto precio'
+    'foto info2'
     'sep sep'
-    'info2 info2'
-    'back back';
+    'datos back';
 
     background-color:  var(--ItemDetailColor);
     border-radius: 10px;
@@ -72,18 +73,32 @@
     padding: 1%;
 
 }
+
 .item-detail-info2{
     grid-area: info2;
     margin: 3vh 0%;
     padding: 1%;
+    font-size: 110%;
 
+}
+
+.item-detail-datos{
+    border: 2px solid var(--DatosDetail);
+    border-radius: 20px;
+    grid-area: datos;
+    margin: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    font-size: 105%;
 }
 
 .item-detail-precio{
     grid-area: precio;
     margin: 0;
     padding: 1%;
-    font-size: 105%;
+    font-size: 110%;
     font-weight: 600;
 
 }

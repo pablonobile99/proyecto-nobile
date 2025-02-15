@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom'
 const Header = (props) => {
   return (
     <div className='header'>
-        
-        <h1 className='titulo-header'><Link to={'/'} className='link' >{props.titulo}</Link></h1>
+        <Link to={'/'} className='link titulo-header-link'>
+          <img src="../../public/images/logo.png" alt="logo" className='logo-header'/>
+          <h1 className='titulo-header'>{props.titulo}</h1>
+        </Link>
         <Link to={'/'} className='link' >
           <Boton texto="Inicio"/>
         </Link>
@@ -20,8 +22,8 @@ const Header = (props) => {
         <Link to={'/categoria/salud'} className='link' >
           <Boton texto="Salud"/>
         </Link>
-        <Link to={'/categoria/veterinaria'} className='link' >
-          <Boton texto="Veterinaria"/>
+        <Link to={'/categoria/profecionales'} className='link' >
+          <Boton texto="Profecionales"/>
         </Link>
         <Link to={'/carrito'} className='link'>
           <div className='img-header-box'>

@@ -33,7 +33,6 @@ const ItemListConteinter = (props) => {
 
   return (
     <div className='item-body'>
-      <h2>Gatitos:</h2>
 
       {/* <form onSubmit={manejadorSubmit}>
         <input type="text" name='busqueda' />
