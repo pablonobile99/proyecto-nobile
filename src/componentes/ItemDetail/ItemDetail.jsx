@@ -5,9 +5,11 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import './ItemDetail.css'
+import Contador from '../Contador/Contador'
 
 
 const ItemDetail = () => {
+
 
     const [producto, setProducto] = useState([])
 
@@ -24,7 +26,12 @@ const ItemDetail = () => {
   
     }, [idProducto])
 
-    console.log(producto)
+    const [agregarCantidad, setAgregarCantidad] = useState (0);
+
+    const manejadorCantidad = (cantidad) =>{
+      setAgregarCantidad(cantidad);
+      console.log("Productos agregados: " + cantidad + " de item " + producto.id);
+    }
 
 
   return (
@@ -43,9 +50,9 @@ const ItemDetail = () => {
         </div>
 
         <div className='conteiner-button'>
-          <button className='item-detail-button'>
-            <Link to={`/`} className='link' >Inicio</Link>
-          </button>
+          {
+            agregarCantidad > 0 ? (<Link to={`/carrito`} className='link boton-carrito'>Ir al carrito</Link>) : (<Contador inicial={1} stock={producto.stock} funcionAgregar={manejadorCantidad}/>)
+          }
         </div>
 
     </div>

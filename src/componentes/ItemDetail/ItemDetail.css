@@ -47,9 +47,10 @@
 .conteiner-button{
     grid-area: back;
     width: 100%;
-    margin: 3vh 0%;
+    margin: 0vh 0%;
     display: flex;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -108,4 +109,24 @@ h4{
     font-size: 200%;
     margin: 0;
     padding: 1%;
+}
+
+.boton-carrito{
+    display: inline;
+    margin: 1%;
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--BotonMenuColor);
+    border: 0;
+    border-radius: 10px;
+    font-family: "Quicksand", serif;
+    padding: 2%;
+    height: auto;
+}
+
+.boton-carrito:hover{
+    background-color: var(--BotonMenuColorHobber);
+    transition: all 50ms ease-out;
 }
