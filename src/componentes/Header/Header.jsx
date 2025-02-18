@@ -2,6 +2,7 @@ import React from 'react'
 import Boton from './Boton'
 import './Header.css'
 import { Link } from 'react-router-dom'
+import IndicadorCarrito from './IndicadorCarrito'
 
 const Header = (props) => {
   return (
@@ -32,6 +33,8 @@ const Header = (props) => {
           
           </div>
           </Link>
+
+          <IndicadorCarrito/>
         
         
     </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useContext } from 'react'
 
 import Variables from './componentes/Variables/Variables'
 
@@ -17,23 +17,26 @@ import Form from './componentes/Form/Form'
 import { BrowserRouter , Routes , Route } from 'react-router-dom'
 import ItemDetail from './componentes/ItemDetail/ItemDetail'
 import Carrito from './componentes/carrito/carrito'
+import { CarritoProvider } from './componentes/CarritoContext/CarritoContext'
 
 
 const App = () => {
 
-
   return (
+    
     <BrowserRouter>
-      <div className='app-General'>
-      <Variables/>
-      <Header titulo="Adopta.me"/>
-      <Routes>
-        <Route path='/' element = {<ItemListConteinter/>}/>
-        <Route path='/categoria/:idCategoria' element = {<ItemListConteinter/>}/>
-        <Route path='/item/:idProducto' element = {<ItemDetail/>}/>
-        <Route path='/carrito' element = {<Carrito/>}/>
-      </Routes>
-    </div>
+      <CarritoProvider>
+        <div className='app-General'>
+          <Variables/>
+          <Header titulo="Adopta.me"/>
+          <Routes>
+            <Route path='/' element = {<ItemListConteinter/>}/>
+            <Route path='/categoria/:idCategoria' element = {<ItemListConteinter/>}/>
+            <Route path='/item/:idProducto' element = {<ItemDetail/>}/>
+            <Route path='/carrito' element = {<Carrito/>}/>
+          </Routes>
+        </div>
+      </CarritoProvider>
     </BrowserRouter>
 
   )

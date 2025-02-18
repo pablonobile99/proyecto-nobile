@@ -14,7 +14,7 @@ const Item = ({id, nombre, stock, precio, img, idCat, zona, tel, detail}) => {
         <p className='item-txt'>{idCat}</p>
         <div className='item-zona'>
           <img src="../..//public/images/gpsIcon.png" alt="gps" className='item-gps-icon'/>
-          <p className='item-txt'>{zona}</p>
+          <p className='item-zona-txt'>{zona}</p>
         </div>
         <p className='item-txt'> {precio}</p>
         <p className='item-txt'></p>
