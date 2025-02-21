@@ -13,10 +13,10 @@ export const CarritoProvider = ({children}) => {
     const [total, setTotal] = useState([])
     const [cantidadTotal, setCantidadTotal] = useState([])
 
-    /* console.log(carrito) */
-
     const agregarAlCarrito = (item, cantidad) => {
         const productoExistente = carrito.find(prod => prod.item.id === item.id)
+
+        if(item.precio == "En adopcion"){ item.precio = 0}
 
         if (!productoExistente) {
             setCarrito(prev => [...prev, { item, cantidad }])
@@ -47,7 +47,7 @@ export const CarritoProvider = ({children}) => {
         const carritoActualizado = carrito.filter(prod => prod.item.id !== id)
 
         setCarrito(carritoActualizado)
-        setCantidadTotal(prev => prev - productoEliminado)
+        setCantidadTotal(prev => prev - productoEliminado.cantidad)
         setTotal(prev => prev - (productoEliminado.item.precio * productoEliminado.cantidad))
     }
 
