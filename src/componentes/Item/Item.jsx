@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom'
 
 const Item = ({id, nombre, stock, precio, img, idCat, zona, tel, detail}) => {
 
+  if(precio == 0){
+    if(idCat=="profecionales"){
+      precio = "Particular"
+    } else{
+      precio = "En adopcion"
+    }
+  }
+
   return (
 
     <div className='item-box'>

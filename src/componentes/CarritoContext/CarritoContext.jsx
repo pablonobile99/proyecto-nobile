@@ -16,7 +16,6 @@ export const CarritoProvider = ({children}) => {
     const agregarAlCarrito = (item, cantidad) => {
         const productoExistente = carrito.find(prod => prod.item.id === item.id)
 
-        if(item.precio == "En adopcion"){ item.precio = 0}
 
         if (!productoExistente) {
             setCarrito(prev => [...prev, { item, cantidad }])
@@ -34,6 +33,7 @@ export const CarritoProvider = ({children}) => {
             setCantidadTotal(prev => prev + cantidad)
             setTotal(prev => prev + (item.precio * cantidad))
         }
+
     }
 
     const vaciarCarrito = () => {

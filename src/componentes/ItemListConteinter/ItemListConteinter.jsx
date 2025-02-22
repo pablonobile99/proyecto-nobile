@@ -20,25 +20,9 @@ const ItemListConteinter = (props) => {
 
   }, [idCategoria])
 
-/* 
-  const pedirDatos = async () => {
-    const inventario = idCategoria? await getProductosCategoria() : await getProductos();
-    setProductos(inventario)
-  }
-  
-  pedirDatos();
-
-  const [busqueda,setBusqueda] = useState ("") */
-
 
   return (
     <div className='item-body'>
-
-      {/* <form onSubmit={manejadorSubmit}>
-        <input type="text" name='busqueda' />
-        <button className='boton' type='submit'>Buscar</button>
-      </form> */}
-
       <div className='item-list-conteiner-box'>
         <ItemList productos={productos}/>
       </div>
