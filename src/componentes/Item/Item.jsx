@@ -15,6 +15,7 @@ const Item = ({id, nombre, stock, precio, img, idCat, zona, tel, detail}) => {
   return (
 
     <div className='item-box'>
+        <p>{stock}</p>
         <div className='item-box-img'>
           <img src={img} alt={nombre} className='item-img'/>
         </div>
