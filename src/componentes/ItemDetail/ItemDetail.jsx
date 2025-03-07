@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 
-import { getProductos, getProductosId } from '../../asyncmock'
+/* import { getProductos, getProductosId } from '../../asyncmock' */
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import './ItemDetail.css'
 import Contador from '../Contador/Contador'
 import { CarritoContext } from '../CarritoContext/CarritoContext'
+
+import { db } from '../../services/config'
+import {getDoc, doc } from 'firebase/firestore'
 
 
 const ItemDetail = () => {
@@ -17,7 +20,37 @@ const ItemDetail = () => {
 
   const { idProducto } = useParams();
 
-  useEffect(() => {
+
+    useEffect(()=>{
+      const nuevoDoc = doc(db, "productos", idProducto)
+
+      getDoc(nuevoDoc)
+      .then (res => {
+        const data = res.data()
+        const nuevoProducto = {id: res.id, ...data}
+        setProducto(nuevoProducto)
+      })
+      .catch(e => console.log(e))
+    }, [idProducto])
+
+      /* const miProducto = idProducto ? query(collection(db, "productos"), where ("id", "==" , idProducto)) : collection(db, "productos")
+
+      console.log(idProducto)
+  
+      getDocs(miProducto)
+      .then(res =>{
+        const nuevoProducto = res.docs.map(doc => {
+          const data = doc.data()
+          console.log(data)
+          return {id: doc.id, ...data}
+        })
+        setProducto(nuevoProducto)
+      })
+      .catch(e => console.log(e))
+    }, [idProducto]) */
+
+
+  /* useEffect(() => {
 
     const inventario = idProducto ? getProductosId : getProductos;
 
@@ -26,7 +59,7 @@ const ItemDetail = () => {
         res.map(item => setProducto(item))
       })
 
-  }, [idProducto])
+  }, [idProducto]) */
 
   const [agregarCantidad, setAgregarCantidad] = useState(0);
 
@@ -50,7 +83,7 @@ const ItemDetail = () => {
       </div>
       <div className='item-detail-sep' />
       <p className='item-detail-info1'>{producto.idCat}</p>
-      <p className='item-detail-precio'>{producto.precio}</p>
+      <p className='item-detail-precio'>${producto.precio}</p>
       <p className='item-detail-info2'>{producto.detail}</p>
       <div className='item-detail-datos-conteiner'>
         <p className='item-detail-datos'>{producto.zona}</p>

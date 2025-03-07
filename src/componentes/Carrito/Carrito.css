@@ -57,7 +57,28 @@
     align-items: center;
     justify-content: center;
     margin: 0 10% 0 10%;
+
     border: 1px solid black;
     border-top: 0;
+}
 
+.boton-finalizar{
+
+    padding: 2%;
+
+    font-size: medium;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--BotonMenuColor);
+    border: 0;
+    border-radius: 10px;
+    font-family: "Quicksand", serif;
+}
+
+.boton-finalizar:hover{
+    background-color: var(--BotonMenuColorHobber);
+    transition: all 50ms ease-out;
 }

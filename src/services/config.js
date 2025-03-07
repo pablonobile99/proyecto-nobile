@@ -40,3 +40,24 @@ const productos = [
     { nombre: "Veterinario particular", stock: 999, precio: 0, img: "../public/Images/v3.jpg", idCat: "profecionales", zona: "CABA", tel: "11-75325257", detail: "Somos un veterinario con mas de 15 años en el rubro. realizamos cualquier tipo de consutla necesaria. contamos con gran variedad de productos. utilizamos wpp o llamada al 1175325257" },
     { nombre: "Veterinaria Mascotitas", stock: 999, precio: 0, img: "../public/Images/v4.jpg", idCat: "profecionales", zona: "Gonzales Catan", tel: "11-15252369", detail: "VETERINARIA MASCOTITAS - gonzales catan. trae tu mascota. consultas y castraciones. ponemos vacunas y pipetas. tenemos mas de 200 productos para lo que tu mascota necesite." }
 ]
+
+/* import { collection, doc, writeBatch } from "firebase/firestore";
+
+const subirProductos = async () => {
+    const batch = writeBatch(db);
+    const productosRef = collection(db, "productos");
+
+    productos.forEach((producto) => {
+        const nuevoDoc = doc(productosRef);
+        batch.set(nuevoDoc, producto);
+    })
+
+    try{
+        await batch.commit();
+        console.log("subido OK");
+    } catch(error){
+        console.log("error", error);
+    }
+}
+
+subirProductos(); */

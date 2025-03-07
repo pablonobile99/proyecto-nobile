@@ -3,6 +3,8 @@ import React, { useContext } from 'react'
 import "./carrito.css"
 import { CarritoContext } from '../CarritoContext/CarritoContext'
 import { ItemCarrito } from '../Carrito/ItemCarrito'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -27,10 +29,10 @@ const Carrito = () => {
         </div>
         <div className='carrito-data'>
           <p className='carrito-cantidad-total'>cantidad total: {cantidadTotal}</p>
-          <p className='carrito-precio-total'>total: {precioTotal}</p>
+          <p className='carrito-precio-total'>total: ${precioTotal}</p>
         </div>
         <div className='carrito-finalizar-boton'>
-          <button className='boton'>Finalizar Compra</button>
+          <Link to={`/checkout`} className='link boton-finalizar'>Finalizar Compra</Link> 
         </div>
        
     </div>
