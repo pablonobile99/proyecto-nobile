@@ -41,7 +41,7 @@
     justify-content: center;
     flex-direction: column;
     margin: 10% 10% 0 10%;
-    border: 1px solid black;
+    border: 1px solid gray;
     border-bottom: 0;
 
 }
@@ -58,7 +58,7 @@
     justify-content: center;
     margin: 0 10% 0 10%;
 
-    border: 1px solid black;
+    border: 1px solid gray;
     border-top: 0;
 }
 

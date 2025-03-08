@@ -3,6 +3,8 @@ import { CarritoContext } from '../CarritoContext/CarritoContext'
 import { db } from '../../services/config'
 import { collection, addDoc , updateDoc , doc , getDoc} from 'firebase/firestore'
 
+import "./Checkout.css"
+
 const Checkout = () => {
 
     const [nombre, setNombre] = useState("")
@@ -53,10 +55,12 @@ const Checkout = () => {
             }) */
 
         Promise.all(
+            
             orden.items.map( async (productoOrden) =>{
                 const productoRef = doc(db, "productos" , productoOrden.id)
                 const prodcutoDoc = await getDoc(productoRef)
-                const stockActual = prodcutoDoc.data().stockActual
+                const stockActual = prodcutoDoc.data().stock
+                setError("Generando compra...")
 
                 await updateDoc(productoRef , {
                     stock : stockActual - productoOrden.cantidad
@@ -64,6 +68,7 @@ const Checkout = () => {
             })
         )
         .then(()=>{
+            setError("")
             addDoc(collection(db, "ordenes"), orden)
                 .then(docRef =>{
                     setOrdenId(docRef.id)
@@ -82,52 +87,75 @@ const Checkout = () => {
     }
 
   return (
-    <div>
-        <h2>Checkout Final</h2>
+    <div className='checkout-body'>
+        <div className='checkout-conteiner'>
+            <h2 className='checkout-title'>Checkout Final</h2>
 
-        <form onSubmit={manejadorFormulario}>
+            <form onSubmit={manejadorFormulario}>
 
-        {
-            carrito.map(producto=>(
-                <div key={producto.item.id}>
-                    <p>{producto.item.nombre} X {producto.cantidad} - ${producto.item.precio}</p>
-                    <p>${producto.item.precio*producto.cantidad}</p>
-                    <hr />
+            {
+                carrito.map(producto=>(
+                    <div key={producto.item.id} className='checkout-item-conteiner'>
+                        <div className='checkout-item-box1'>
+                            <p className='checkout-item-info'>{producto.item.nombre} X {producto.cantidad} - ${producto.item.precio}</p>
+                        </div>
+                        <div className='checkout-item-box2'>
+                            <div className='checkout-item-esp'/>
+                            <p className='checkout-item-total'>${producto.item.precio*producto.cantidad}</p>
+                        </div>
+                    </div>
+                ))
+            }
+                <div className='checkout-input-box'>
+                    <label htmlFor="" className='txt checkout-label'>Nombre</label>
+                    <br/>
+                    <input type="text" className='txt checkout-input' onChange={(e)=>setNombre(e.target.value)}/>
                 </div>
-            ))
-        }
-            <div>
-                <label htmlFor="">Nombre</label>
-                <input type="text"  onChange={(e)=>setNombre(e.target.value)}/>
-            </div>
-            <div>
-                <label htmlFor="">Apellido</label>
-                <input type="text" onChange={(e)=>setApellido(e.target.value)}/>
-            </div>
-            <div>
-                <label htmlFor="">Telefono</label>
-                <input type="text" onChange={(e)=>setTelefono(e.target.value)}/>
-            </div>
-            <div>
-                <label htmlFor="">Email</label>
-                <input type="email" onChange={(e)=>setEmail(e.target.value)}/>
-            </div>
-            <div>
-                <label htmlFor="">Confirmacion de Email</label>
-                <input type="email" onChange={(e)=>setEmailConfirmacion(e.target.value)}/>
-            </div>
-            {
-                error && <p>{error}</p>
-            }
-            <button type='submit'>Confirmar compra</button>
-            {
-                ordenId && (
-                    <strong>
-                        Gracias por tu compra. Tu numero de compra es {ordenId}
-                    </strong>
-                )
-            }
-        </form>
+                <div className='checkout-input-box'>
+                    <label htmlFor="" className='txt checkout-label'>Apellido</label>
+                    <br/>
+                    <input type="text" className='txt checkout-input' onChange={(e)=>setApellido(e.target.value)}/>
+                </div>
+                <div className='checkout-input-box'>
+                    <label htmlFor="" className='txt checkout-label'>Telefono</label>
+                    <br/>
+                    <input type="text" className='txt checkout-input' onChange={(e)=>setTelefono(e.target.value)}/>
+                </div>
+                <div className='checkout-input-box'>
+                    <label htmlFor="" className='txt checkout-label'>Email</label>
+                    <br/>
+                    <input type="email" className='txt checkout-input' onChange={(e)=>setEmail(e.target.value)}/>
+                </div>
+                <div className='checkout-input-box'>
+                    <label htmlFor="" className='txt checkout-label'>Confirmacion de Email</label>
+                    <br/>
+                    <input type="email" className='txt checkout-input' onChange={(e)=>setEmailConfirmacion(e.target.value)}/>
+                </div>
+
+                <div  className='checkout-error-box'>
+                    {
+                        error && <p className='txt'>{error}</p>
+                    }
+                </div>
+                
+                <div className='checkout-button-conteiner'>
+                    <button type='submit' className='boton checkout-button'>Confirmar compra</button>
+                </div>
+                
+
+                
+
+                <div className='checkout-order-box'>
+                    {
+                        ordenId && (
+                            <strong className='txt'>
+                                Gracias por tu compra. Tu numero de compra es {ordenId}
+                            </strong>
+                        )
+                    }
+                </div>
+            </form>
+        </div>
     </div>
   )
 }

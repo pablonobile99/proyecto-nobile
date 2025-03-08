@@ -1,0 +1,100 @@
+.checkout-body{
+    background-color: var(--primario);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.checkout-title{
+    padding-bottom: 2%;
+    border-bottom: 2px dashed black;
+}
+.checkout-conteiner{
+    margin: 3%;
+    background-color: var(--fondo);
+    padding: 2%;
+    border-radius: 20px;
+}
+
+
+.checkout-item-conteiner{
+    margin: 0 2%;
+    border-bottom: 1px solid gray;
+    display: flex;
+    align-items: center;
+    height: min-content;
+}
+
+.checkout-item-box1{
+    width: min-content;
+    display: flex;
+    align-items: center;
+    height: min-content;
+
+}
+.checkout-item-box2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: min-content;
+    
+    
+}
+
+
+.checkout-item-info{
+    width: max-content;
+    height: min-content;
+}
+.checkout-item-esp{
+    border-bottom: 1px dashed gray;
+    width: 100%;
+    height: min-content;
+    margin: 0% 2%;
+}
+.checkout-item-total{
+    height: min-content;
+}
+
+.checkout-input-box{
+    margin: 3% 2%;
+
+}
+
+.checkout-label{
+
+}
+
+.checkout-input{
+    margin-top: 1%;
+    border: 1px solid g;
+    border-radius: 3px;
+    padding: 5px;
+    width: 40%;
+}
+
+.checkout-button-conteiner{
+    padding-top: 2%;
+    border-top: 2px dashed black;
+    margin-bottom: 3%;
+}
+.checkout-button{
+    border: 2px solid gray;
+    padding: 1%;
+    box-shadow: 3px 3px 7px -2px var(--secundario);
+}
+.checkout-button:active{
+    box-shadow: 2px 2px 3px -2px var(--secundario);
+}
+
+.checkout-error-box{
+    margin: 3% 2%;
+    color: red;
+}
+.checkout-order-box{
+
+}
+
+.txt{
+    font-family: "Quicksand", serif;
+}
