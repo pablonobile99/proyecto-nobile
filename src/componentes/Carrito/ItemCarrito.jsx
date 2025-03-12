@@ -13,7 +13,7 @@ export const ItemCarrito = ({item,cantidad}) => {
     }
 
     if(item.precio == 0){
-      if(item.idCat=="profecionales"){
+      if(item.idCat=="profesionales"){
         item.precio = "Particular"
       } else{
         item.precio = "En adopcion"

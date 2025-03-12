@@ -17,6 +17,7 @@ const ItemListConteinter = (props) => {
 
     getDocs(misProductos)
     .then(res =>{
+      console.log(res)
       const nuevosProductos = res.docs.map(doc => {
         const data = doc.data()
         return {id: doc.id, ...data}

@@ -83,7 +83,11 @@ const ItemDetail = () => {
       </div>
       <div className='item-detail-sep' />
       <p className='item-detail-info1'>{producto.idCat}</p>
-      <p className='item-detail-precio'>${producto.precio}</p>
+      <p className='item-detail-precio'>
+        {
+          producto.precio == 0 ? ("") : (producto.precio)
+        }
+      </p>
       <p className='item-detail-info2'>{producto.detail}</p>
       <div className='item-detail-datos-conteiner'>
         <p className='item-detail-datos'>{producto.zona}</p>

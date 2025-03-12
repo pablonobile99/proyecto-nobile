@@ -23,8 +23,8 @@ const Header = (props) => {
         <Link to={'/categoria/salud'} className='link' >
           <Boton texto="Salud"/>
         </Link>
-        <Link to={'/categoria/profecionales'} className='link' >
-          <Boton texto="Profecionales"/>
+        <Link to={'/categoria/profesionales'} className='link' >
+          <Boton texto="profesionales"/>
         </Link>
         <Link to={'/carrito'} className='link'>
           <div className='img-header-box'>

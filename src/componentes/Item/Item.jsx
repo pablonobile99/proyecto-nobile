@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Item = ({id, nombre, stock, precio, img, idCat, zona, tel, detail}) => {
 
   if(precio == 0){
-    if(idCat=="profecionales"){
+    if(idCat=="profesionales"){
       precio = "Particular"
     } else{
       precio = "En adopcion"
@@ -17,7 +17,6 @@ const Item = ({id, nombre, stock, precio, img, idCat, zona, tel, detail}) => {
       {
         stock > 0 ? (
           <div className='item-box'>
-            <p>{stock}</p>
             <div className='item-box-img'>
               <img src={img} alt={nombre} className='item-img'/>
             </div>
@@ -27,7 +26,10 @@ const Item = ({id, nombre, stock, precio, img, idCat, zona, tel, detail}) => {
               <img src="../..//public/images/gpsIcon.png" alt="gps" className='item-gps-icon'/>
               <p className='item-zona-txt'>{zona}</p>
             </div>
-            <p className='item-txt'> {precio}</p>
+            <p className='item-txt'>
+              {precio != "Particular" && precio != "En adopcion" ? ("$") : ("")}
+              {precio}
+            </p>
             <p className='item-txt'></p>
             <Link to={`/item/${id}`} className='link item-button'>
               <span className='item-txt-bot'>Ver Detalles</span>

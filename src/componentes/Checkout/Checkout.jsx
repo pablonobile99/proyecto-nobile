@@ -142,9 +142,6 @@ const Checkout = () => {
                     <button type='submit' className='boton checkout-button'>Confirmar compra</button>
                 </div>
                 
-
-                
-
                 <div className='checkout-order-box'>
                     {
                         ordenId && (

@@ -2,7 +2,6 @@
     background-color: var(--primario);
     position: absolute;
     width: 100%;
-    height: 100%;
 }
 .checkout-title{
     padding-bottom: 2%;
