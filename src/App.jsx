@@ -16,7 +16,7 @@ import Form from './componentes/Form/Form'
 
 import { BrowserRouter , Routes , Route } from 'react-router-dom'
 import ItemDetail from './componentes/ItemDetail/ItemDetail'
-import Carrito from './componentes/carrito/carrito'
+import Carrito from './componentes/Carrito/Carrito'
 import { CarritoProvider } from './componentes/CarritoContext/CarritoContext'
 import Checkout from './componentes/Checkout/Checkout'
 
