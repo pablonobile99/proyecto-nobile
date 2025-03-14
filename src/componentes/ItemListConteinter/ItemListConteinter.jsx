@@ -5,6 +5,7 @@ import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import { db } from '../../services/config'
 import { collection, getDocs, query, where } from 'firebase/firestore'
+import { Loaded } from '../Loaded/Loaded'
 
 const ItemListConteinter = (props) => {
 
@@ -12,12 +13,14 @@ const ItemListConteinter = (props) => {
 
   const {idCategoria} = useParams();
 
+  const [loading, setLoading] = useState(true)
+
   useEffect(()=>{
+    setLoading(true)
     const misProductos = idCategoria ? query(collection(db, "productos"), where ("idCat", "==" , idCategoria)) : collection(db, "productos")
 
     getDocs(misProductos)
     .then(res =>{
-      console.log(res)
       const nuevosProductos = res.docs.map(doc => {
         const data = doc.data()
         return {id: doc.id, ...data}
@@ -25,6 +28,10 @@ const ItemListConteinter = (props) => {
       setProductos(nuevosProductos)
     })
     .catch(e => console.log(e))
+    .finally(() => {
+      /* console.log("Terminado") */
+      setLoading(false)
+    })
   }, [idCategoria])
 
 /*   useEffect(() => {
@@ -40,7 +47,10 @@ const ItemListConteinter = (props) => {
   return (
     <div className='item-body'>
       <div className='item-list-conteiner-box'>
-        <ItemList productos={productos}/>
+        {
+          loading ? <Loaded/> :        <ItemList productos={productos}/>
+
+        }
       </div>
     </div>
   )

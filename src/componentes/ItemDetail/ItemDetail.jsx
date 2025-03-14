@@ -11,6 +11,8 @@ import { CarritoContext } from '../CarritoContext/CarritoContext'
 import { db } from '../../services/config'
 import {getDoc, doc } from 'firebase/firestore'
 
+import { toast } from 'react-toastify';
+
 
 const ItemDetail = () => {
 
@@ -70,6 +72,17 @@ const ItemDetail = () => {
     console.log("Productos agregados: " + cantidad + " de item " + producto.id);
 
     agregarAlCarrito(producto, cantidad) 
+    toast.success('Agregaste' + producto + 'al carrito', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      /* transition: Slide, */
+      });
   }
 
 

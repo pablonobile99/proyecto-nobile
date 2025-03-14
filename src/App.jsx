@@ -20,6 +20,9 @@ import Carrito from './componentes/carrito/carrito'
 import { CarritoProvider } from './componentes/CarritoContext/CarritoContext'
 import Checkout from './componentes/Checkout/Checkout'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const App = () => {
 
@@ -39,6 +42,7 @@ const App = () => {
           </Routes>
         </div>
       </CarritoProvider>
+      <ToastContainer />
     </BrowserRouter>
 
   )
