@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 
-/* import { getProductos, getProductosId } from '../../asyncmock' */
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
@@ -34,34 +33,6 @@ const ItemDetail = () => {
       })
       .catch(e => console.log(e))
     }, [idProducto])
-
-      /* const miProducto = idProducto ? query(collection(db, "productos"), where ("id", "==" , idProducto)) : collection(db, "productos")
-
-      console.log(idProducto)
-  
-      getDocs(miProducto)
-      .then(res =>{
-        const nuevoProducto = res.docs.map(doc => {
-          const data = doc.data()
-          console.log(data)
-          return {id: doc.id, ...data}
-        })
-        setProducto(nuevoProducto)
-      })
-      .catch(e => console.log(e))
-    }, [idProducto]) */
-
-
-  /* useEffect(() => {
-
-    const inventario = idProducto ? getProductosId : getProductos;
-
-    inventario(idProducto)
-      .then(res => {
-        res.map(item => setProducto(item))
-      })
-
-  }, [idProducto]) */
 
   const [agregarCantidad, setAgregarCantidad] = useState(0);
 

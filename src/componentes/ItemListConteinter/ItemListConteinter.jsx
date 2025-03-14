@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './ItemListConteinter.css'
 import ItemList from '../ItemList/ItemList'
-/* import { getProductos, getProductosCategoria } from '../../asyncmock' */
 import { useParams } from 'react-router-dom'
 import { db } from '../../services/config'
 import { collection, getDocs, query, where } from 'firebase/firestore'
@@ -28,20 +27,10 @@ const ItemListConteinter = (props) => {
       setProductos(nuevosProductos)
     })
     .catch(e => console.log(e))
-    .finally(() => {
-      /* console.log("Terminado") */
+    .finally(e => {
       setLoading(false)
     })
-  }, [idCategoria])
-
-/*   useEffect(() => {
-
-    const inventario = idCategoria? getProductosCategoria : getProductos;
-
-    inventario(idCategoria)
-    .then(res => setProductos(res))
-
-  }, [idCategoria]) */
+  }, [idCategoria]);
 
 
   return (

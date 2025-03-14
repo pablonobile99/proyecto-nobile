@@ -44,16 +44,6 @@ const Checkout = () => {
             email
         };
 
-        /* addDoc(collection(db, "ordenes"), orden)
-            .then(docRef =>{
-                setOrdenId(docRef.id)
-                vaciarCarrito();
-            })
-            .catch(e=>{
-                console.log("error al crear orden" , e)
-                setError("error al crear la orden")
-            }) */
-
         Promise.all(
             
             orden.items.map( async (productoOrden) =>{

@@ -1,11 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "proyectofinalnobile.firebaseapp.com",
@@ -41,23 +36,3 @@ const productos = [
     { nombre: "Veterinaria Mascotitas", stock: 999, precio: 0, img: "../public/Images/v4.jpg", idCat: "profesionales", zona: "Gonzales Catan", tel: "11-15252369", detail: "VETERINARIA MASCOTITAS - gonzales catan. trae tu mascota. consultas y castraciones. ponemos vacunas y pipetas. tenemos mas de 200 productos para lo que tu mascota necesite." }
 ]
 
-/* import { collection, doc, writeBatch } from "firebase/firestore";
-
-const subirProductos = async () => {
-    const batch = writeBatch(db);
-    const productosRef = collection(db, "productos");
-
-    productos.forEach((producto) => {
-        const nuevoDoc = doc(productosRef);
-        batch.set(nuevoDoc, producto);
-    })
-
-    try{
-        await batch.commit();
-        console.log("subido OK");
-    } catch(error){
-        console.log("error", error);
-    }
-}
-
-subirProductos(); */
