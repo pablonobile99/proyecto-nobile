@@ -47,3 +47,4 @@ npm install
 npm run dev
 ```
 5. Copia la ruta del servidor o utiliza el enlace del servidor a "http://localhost:XXXX"
+
