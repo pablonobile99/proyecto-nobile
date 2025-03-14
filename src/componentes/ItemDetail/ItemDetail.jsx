@@ -43,7 +43,7 @@ const ItemDetail = () => {
     console.log("Productos agregados: " + cantidad + " de item " + producto.id);
 
     agregarAlCarrito(producto, cantidad) 
-    toast.success('Agregaste' + producto + 'al carrito', {
+    toast.success('Agregaste ' + producto.nombre + ' al carrito', {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
